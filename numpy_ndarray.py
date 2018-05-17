@@ -21,24 +21,33 @@ for j in range(2,x//2+1):
         k=k+1
 if(k<=0):
     a.append(input("Enter one more value: "))
-
-else:
     p=0
-    for i in range (2,x):
-        if((x%i)==0):
-            va.append(int(i))
-            va1.append(int(x/i))
-ka=len(va)
-print("ka is"+str(ka))
+
+    #print("a length is"+str(x))
+
+p=0
+x=len(a)
+for i in range (2,x):
+    #print(x%i)
+    if((x%i)==0):
+        #print("inside x%i")
+        va.append(int(i))
+        va1.append(int(x/i))
+        ka=len(va)
+#print("ka is"+str(ka))
 for i in range(0,ka):
+    #print("inside inner for")
     print("Press "+str(i+1)+" for "+str(va[i])+"*"+str(va1[i])+" matrix")
-choice=int(input())
-print("Choice is"+str(choice))
-for i in range(1,ka):
+choice=int(input("Enter choice:"))
+#print("Choice is"+str(choice))
+for i in range(1,ka+1):
     if i==choice:
         array=np.array(a).reshape(int(va[i-1]),int(va1[i-1]))
     else:
-        print("Invalid Choice....")
+        array="Invalid Choice...."
+        #print("Invalid Choice....")
+        break;
+
 print(array)
 
 
